@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Advanced React Application Example</title>
+    <script type="text/javascript">
+      window.initialData = <%-JSON.stringify(initialData)-%>
+    </script>
+  </head>
+  <body>
+    <h1>Articles List</h1>
+    <div id="root"><%- initialMarkup -%></div>
+    <script src="/bundle.js" charset="utf-8">
+    </script>
+  </body>
+</html>
