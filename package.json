@@ -7,8 +7,10 @@
   "author": "Nazila Taherinik",
   "license": "MIT",
   "scripts": {
-    "dev": "NODE_PATH=./lib pm2 start --interpreter babel-node lib/server.js --watch",
-    "webpack": "webpack --mode=development",
+    "start": "concurrently \"yarn run dev:server\" \"yarn run dev:bundler\" \"yarn run dev:log\"",
+    "dev:server": "NODE_PATH=./lib pm2 start --interpreter babel-node lib/server.js  --watch",
+    "dev:bundler": "webpack -w --mode=development",
+    "dev:log": "yarn pm2 logs",
     "test": "jest --watch"
   },
   "devDependencies": {
@@ -16,6 +18,7 @@
     "babel-core": "^7.0.0-bridge.0",
     "babel-eslint": "^10.1.0",
     "babel-jest": "^26.6.0",
+    "concurrently": "^5.3.0",
     "eslint": "^7.11.0",
     "eslint-plugin-react": "^7.21.5",
     "jest": "^26.6.0",
