@@ -12,6 +12,6 @@ to run:
 2)yarn webpack
 ```
 ```
-3)yarn dev
+3)yarn start
 ```
 
